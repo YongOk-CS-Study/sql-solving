@@ -1,0 +1,11 @@
+select DATETIME as '시간'
+from ANIMAL_INS
+where DATETIME = (
+    select MAX(DATETIME)
+    from ANIMAL_INS
+);
+---
+SELECT DATETIME AS '시간'
+FROM ANIMAL_INS
+ORDER BY DATETIME DESC
+LIMIT 1;
